@@ -1,0 +1,11 @@
+
+// ROW#( function name, parameter types, return type )
+//   for no parameters, just use ROW, otherwise ROW1, ROW2, &c
+
+ROW3( clamp, f64, f64, f64, f64 )
+
+ROW1( acos, f64, f64 )
+ROW1( cos, f64, f64 )
+
+ROW1( to_rad, f64, f64 )
+ROW1( to_deg, f64, f64 )

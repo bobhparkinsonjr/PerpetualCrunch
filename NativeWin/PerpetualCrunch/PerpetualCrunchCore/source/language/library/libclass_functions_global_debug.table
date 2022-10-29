@@ -1,0 +1,10 @@
+
+// ROW#( function name, parameter types, return type )
+//   for no parameters, just use ROW, otherwise ROW1, ROW2, &c
+
+ROW1( debugPrint, string, void )
+ROW1( debugPrint, i64, void )
+ROW1( debugPrint, f64, void )
+ROW2( debugPrint, string, f64, void )
+
+ROW1( debugBreak, string, void )

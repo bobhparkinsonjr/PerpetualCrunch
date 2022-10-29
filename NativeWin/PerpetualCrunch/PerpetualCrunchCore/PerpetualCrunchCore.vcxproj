@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\core\core_binary_buffer.cpp" />
+    <ClCompile Include="source\core\core_debug.cpp" />
+    <ClCompile Include="source\core\core_file_tools.cpp" />
+    <ClCompile Include="source\core\core_mutex.cpp" />
+    <ClCompile Include="source\core\core_qsort.cpp" />
+    <ClCompile Include="source\core\core_text_file.cpp" />
+    <ClCompile Include="source\core\core_thread.cpp" />
+    <ClCompile Include="source\core\core_wide_string.cpp" />
+    <ClCompile Include="source\language\crunch.flex.cpp" />
+    <ClCompile Include="source\language\crunch.tab.cpp" />
+    <ClCompile Include="source\language\crunch_script_compiler.cpp" />
+    <ClCompile Include="source\language\crunch_script_data_stack.cpp" />
+    <ClCompile Include="source\language\crunch_script_executable.cpp" />
+    <ClCompile Include="source\language\crunch_link_table.cpp" />
+    <ClCompile Include="source\language\crunch_link_table_i1.cpp" />
+    <ClCompile Include="source\language\crunch_link_table_i2.cpp" />
+    <ClCompile Include="source\language\crunch_script_instruction.cpp" />
+    <ClCompile Include="source\language\crunch_script_library.cpp" />
+    <ClCompile Include="source\language\crunch_script_library_class.cpp" />
+    <ClCompile Include="source\language\crunch_script_library_function.cpp" />
+    <ClCompile Include="source\language\crunch_script_object.cpp" />
+    <ClCompile Include="source\language\crunch_string_table.cpp" />
+    <ClCompile Include="source\language\crunch_symbol_stack.cpp" />
+    <ClCompile Include="source\language\crunch_script_thread.cpp" />
+    <ClCompile Include="source\language\crunch_script_types.cpp" />
+    <ClCompile Include="source\language\crunch_script_value.cpp" />
+    <ClCompile Include="source\language\crunch_script_vm.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_global.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_f64v3.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_f64v4.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_global_console.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_global_debug.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_global_f64v3.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_global_f64v4.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_global_math.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_global_string128.cpp" />
+    <ClCompile Include="source\language\library\libclass_functions_string128.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_assignment_statement.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_binary_expression.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_breakable_statement.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_break_statement.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_declaration_statement.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_expression.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_expression_list.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_call.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_declaration.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_parameter.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_parameter_list.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_if_statement.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_include.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_literal_type.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_return_statement.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_root.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_statement_list.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_switch_body.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_switch_case.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_type_identifier.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_variable.cpp" />
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_while_statement.cpp" />
+    <ClCompile Include="source\math\fv3.cpp" />
+    <ClCompile Include="source\math\fv4.cpp" />
+    <ClCompile Include="source\math\math_tools.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Flex Include="source\language\crunch.l">
+      <FileType>Document</FileType>
+    </Flex>
+    <Bison Include="source\language\crunch.y">
+      <FileType>Document</FileType>
+    </Bison>
+    <None Include="source\language\crunch_libclass_declare_end.mac" />
+    <None Include="source\language\crunch_libclass_declare_start.mac" />
+    <None Include="source\language\crunch_libclass_setup_end.mac" />
+    <None Include="source\language\crunch_libclass_setup_start.mac" />
+    <None Include="source\language\crunch_script_opcodes.table" />
+    <None Include="source\language\library\libclass_functions_global.table" />
+    <None Include="source\language\library\libclass_functions_f64v3.table" />
+    <None Include="source\language\library\libclass_functions_f64v4.table" />
+    <None Include="source\language\library\libclass_functions_global_console.table" />
+    <None Include="source\language\library\libclass_functions_global_debug.table" />
+    <None Include="source\language\library\libclass_functions_global_f64v3.table" />
+    <None Include="source\language\library\libclass_functions_global_f64v4.table" />
+    <None Include="source\language\library\libclass_functions_global_math.table" />
+    <None Include="source\language\library\libclass_functions_global_string128.table" />
+    <None Include="source\language\library\libclass_functions_string128.table" />
+    <None Include="source\language\syntax tree\crunch_syntax_nodes.table" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\core\core_binary_buffer.h" />
+    <ClInclude Include="source\core\core_debug.h" />
+    <ClInclude Include="source\core\core_endian_tools.h" />
+    <ClInclude Include="source\core\core_environment_variable.h" />
+    <ClInclude Include="source\core\core_file_string.h" />
+    <ClInclude Include="source\core\core_file_tools.h" />
+    <ClInclude Include="source\core\core_fixed_string.h" />
+    <ClInclude Include="source\core\core_global.h" />
+    <ClInclude Include="source\core\core_headers.h" />
+    <ClInclude Include="source\core\core_mutex.h" />
+    <ClInclude Include="source\core\core_platform.h" />
+    <ClInclude Include="source\core\core_qsort.h" />
+    <ClInclude Include="source\core\core_string.h" />
+    <ClInclude Include="source\core\core_text_file.h" />
+    <ClInclude Include="source\core\core_thread.h" />
+    <ClInclude Include="source\core\core_wide_file_string.h" />
+    <ClInclude Include="source\core\core_wide_string.h" />
+    <ClInclude Include="source\crunch_global.h" />
+    <ClInclude Include="source\language\crunch.tab.h" />
+    <ClInclude Include="source\language\crunch_script_compiler.h" />
+    <ClInclude Include="source\language\crunch_script_data_stack.h" />
+    <ClInclude Include="source\language\crunch_script_executable.h" />
+    <ClInclude Include="source\language\crunch_link_table.h" />
+    <ClInclude Include="source\language\crunch_link_table_i1.h" />
+    <ClInclude Include="source\language\crunch_link_table_i2.h" />
+    <ClInclude Include="source\language\crunch_script_context_stack.h" />
+    <ClInclude Include="source\language\crunch_script_instruction.h" />
+    <ClInclude Include="source\language\crunch_script_library.h" />
+    <ClInclude Include="source\language\crunch_script_library_class.h" />
+    <ClInclude Include="source\language\crunch_script_library_function.h" />
+    <ClInclude Include="source\language\crunch_script_library_tools.h" />
+    <ClInclude Include="source\language\crunch_script_object.h" />
+    <ClInclude Include="source\language\crunch_string_table.h" />
+    <ClInclude Include="source\language\crunch_symbol_stack.h" />
+    <ClInclude Include="source\language\crunch_script_thread.h" />
+    <ClInclude Include="source\language\crunch_script_types.h" />
+    <ClInclude Include="source\language\crunch_script_value.h" />
+    <ClInclude Include="source\language\crunch_script_vm.h" />
+    <ClInclude Include="source\language\library\libclass_functions_global.h" />
+    <ClInclude Include="source\language\library\libclass_functions_f64v3.h" />
+    <ClInclude Include="source\language\library\libclass_functions_f64v4.h" />
+    <ClInclude Include="source\language\library\libclass_functions_string128.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_nodes.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_assignment_statement.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_binary_expression.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_breakable_statement.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_break_statement.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_declaration_statement.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_expression.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_expression_list.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_call.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_declaration.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_parameter.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_parameter_list.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_if_statement.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_include.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_literal_type.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_return_statement.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_root.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_statement_list.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_switch_body.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_switch_case.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_type_identifier.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_variable.h" />
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_while_statement.h" />
+    <ClInclude Include="source\math\fv3.h" />
+    <ClInclude Include="source\math\fv4.h" />
+    <ClInclude Include="source\math\math_tools.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{5f77d821-0aa6-454d-a218-c0ef55eb39c9}</ProjectGuid>
+    <RootNamespace>PerpetualCrunchCore</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\win_flex_bison\custom_build_rules\win_flex_bison\win_flex_bison_custom_build.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+    <TargetName>$(ProjectName)_d64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)bin\</OutDir>
+    <TargetName>$(ProjectName)_r64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_LIB;_CRUNCH_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4005</DisableSpecificWarnings>
+      <ProgramDataBaseFileName>$(ProjectDir)bin\$(ProjectName)_d64.pdb</ProgramDataBaseFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <OutputFile>$(ProjectDir)bin\$(ProjectName)_d64.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_LIB;_CRUNCH_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <DisableSpecificWarnings>4005</DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <OutputFile>$(ProjectDir)bin\$(ProjectName)_r64.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\win_flex_bison\custom_build_rules\win_flex_bison\win_flex_bison_custom_build.targets" />
+  </ImportGroup>
+</Project>

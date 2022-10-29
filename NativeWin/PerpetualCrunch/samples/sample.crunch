@@ -1,0 +1,91 @@
+
+void stringCheck()
+{
+  consolePrint( "please enter something: " );
+  string128 value = consoleRead128();
+
+  consolePrint( "\nyou entered:\n" );
+  consolePrint( value );
+  consolePrint( "\n" );
+
+  i64 l = value.length();
+  consolePrint( "\nthe length of what you entered is:\n" );
+  consolePrint( l );
+  consolePrint( "\n" );
+
+  consolePrint( "characters:\n" );
+
+  i64 i = 0;
+
+  while ( i < l )
+  {
+    consolePrint( value[i] );
+    consolePrint( "\n" );
+
+    i = i + 1;
+  }
+}
+
+void vectorCheck()
+{
+  f64v3 a = f64v3( 1.0, 2.0, 3.0 );
+  f64v3 b = f64v3( 4.0, 5.0, 6.0 );
+
+  f64v3 c = a + b;
+
+  consolePrint( "testing some vector stuff, should see 5, 7, 9 in each line\n" );
+
+  c.consolePrint( "c" );
+  consolePrint( "\n" );
+
+  consolePrint( "c: " );
+  consolePrint( c.x );
+  consolePrint( ", " );
+  consolePrint( c.y );
+  consolePrint( ", " );
+  consolePrint( c.z );
+  consolePrint( "\n" );
+
+  consolePrint( "\n" );
+}
+
+void circleCheck()
+{
+  consolePrint( "\nplease enter the radius of a circle: " );
+  string128 value = consoleRead128();
+
+  f64 r = value.to_f64();
+
+  consolePrint( "\narea: " ); consolePrint( 3.1415927 * r * r ); consolePrint( "\n" );
+  consolePrint( "circumference: " ); consolePrint( 3.1415927 * 2.0 * r ); consolePrint( "\n" );
+}
+
+void angleCheck()
+{
+  f64v3 a = f64v3( 12.7, 0.0, 0.0 );
+  f64v3 b = f64v3( 0.0, 18.2, 0.0 );
+
+  f64 angle = acos( clamp( a.dot( b ) / ( a.length() * b.length() ), -1.0, 1.0 ) );
+
+  consolePrint( "\ntesting some math stuff, should see PI / 2 radians and 90.0 degrees\n" );
+
+  consolePrint( "angle: " );
+  consolePrint( angle );
+  consolePrint( " rad, " );
+  consolePrint( to_deg( angle ) );
+  consolePrint( " deg\n" );
+
+  consolePrint( "\n" );
+}
+
+i64 main()
+{
+  stringCheck();
+  vectorCheck();
+  circleCheck();
+  angleCheck();
+
+  consolePrint( "thanks for trying the sample script!\n\n" );
+
+  return 0;
+}

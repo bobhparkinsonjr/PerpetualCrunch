@@ -1,0 +1,30 @@
+
+#include "core_global.h"
+
+#if !defined _CRUNCH_WINDOWS
+  #include <locale.h>
+#endif
+
+#include "core_wide_string.h"
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace crunch { namespace core {
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+wchar_t WideString::mEmptyString;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+void WideString::setup()
+{
+	#if !defined _CRUNCH_WINDOWS
+	if ( setlocale( LC_ALL, "en_US.UTF-8" ) == nullptr )
+	{
+		assert( false && "failed to setup locale, WideString conversion functions may not work properly" );
+	}
+	#endif
+}
+
+} }

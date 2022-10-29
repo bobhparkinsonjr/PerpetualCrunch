@@ -1,0 +1,137 @@
+
+// key: ROW( _enum_name )
+
+ROW( POP_STORE_LOCAL )
+ROW( POP )
+
+ROW( PUSH_FETCH_LOCAL )
+ROW( PUSH_FETCH_GLIB_CLS )
+ROW( PUSH_FETCH_GLIB_CLSX )
+ROW( FETCH_TEMP_MEMBER )
+
+// push literal value onto top of stack
+ROW( PUSH_STRING )
+ROW( PUSH_I64 )
+ROW( PUSH_U64 )
+ROW( PUSH_F64 )
+ROW( PUSH_NULL_PTR )
+
+// return from function to caller
+ROW( RETURN )
+
+// return from function to caller
+// collapse data stack to remove locals/params, but keep return value at top
+ROW( RETURN2 )
+
+// unary expression arithmetic -
+ROW( MINUS_I64 )
+ROW( MINUS_F64 )
+
+// unary expression bool !
+ROW( BOOL_NOT_I64 )
+
+// unary expression bitwise ~
+ROW( BIT_COMP_I64 )
+ROW( BIT_COMP_U64 )
+
+// binary expression compare ==
+ROW( EE_STRING )
+ROW( EE_I64 )
+ROW( EE_U64 )
+ROW( EE_F64 )
+
+// binary expression compare !=
+ROW( NE_STRING )
+ROW( NE_I64 )
+ROW( NE_U64 )
+ROW( NE_F64 )
+
+// binary expression compare >
+ROW( GT_STRING )
+ROW( GT_I64 )
+ROW( GT_U64 )
+ROW( GT_F64 )
+
+// binary expression compare >=
+ROW( GE_STRING )
+ROW( GE_I64 )
+ROW( GE_U64 )
+ROW( GE_F64 )
+
+// binary expression compare <
+ROW( LT_STRING )
+ROW( LT_I64 )
+ROW( LT_U64 )
+ROW( LT_F64 )
+
+// binary expression compare <=
+ROW( LE_STRING )
+ROW( LE_I64 )
+ROW( LE_U64 )
+ROW( LE_F64 )
+
+// binary expression arithmetic +
+ROW( PLUS_I64 )
+ROW( PLUS_U64 )
+ROW( PLUS_F64 )
+
+// binary expression arithmetic -
+ROW( SUBTRACT_I64 )
+ROW( SUBTRACT_U64 )
+ROW( SUBTRACT_F64 )
+
+// binary expression arithmetic *
+ROW( MULTIPLY_I64 )
+ROW( MULTIPLY_U64 )
+ROW( MULTIPLY_F64 )
+
+// binary expression arithmetic /
+ROW( DIVIDE_I64 )
+ROW( DIVIDE_U64 )
+ROW( DIVIDE_F64 )
+
+// binary expression bool &&
+ROW( BOOL_AND_I64 )
+ROW( BOOL_AND_U64 )
+ROW( BOOL_AND_F64 )
+
+// binary expression bool ||
+ROW( BOOL_OR_I64 )
+ROW( BOOL_OR_U64 )
+ROW( BOOL_OR_F64 )
+
+// binary expression bitwise &
+ROW( BIT_AND_I64 )
+ROW( BIT_AND_U64 )
+
+// binary expression bitwise |
+ROW( BIT_OR_I64 )
+ROW( BIT_OR_U64 )
+
+// cast to int
+ROW( STRING_TO_I64 )
+ROW( U64_TO_I64 )
+ROW( F64_TO_I64 )
+
+// cast to uint
+ROW( STRING_TO_U64 )
+ROW( I64_TO_U64 )
+ROW( F64_TO_U64 )
+
+// cast to float
+ROW( STRING_TO_F64 )
+ROW( I64_TO_F64 )
+ROW( U64_TO_F64 )
+
+ROW( LIB_FUNC_CALL )
+ROW( LIB_FUNC_CALLX )
+ROW( LIB_GFUNC_CALL )
+ROW( LIB_GFUNC_CALLX )
+ROW( SO_FUNC_CALL )
+ROW( SO_GFUNC_CALL )
+
+ROW( BRANCH ) // fall-thru on true, jump for false
+ROW( BRANCHF ) // fall-thru on false, jump for true
+ROW( JUMP )
+
+ROW( SWITCH_JUMP_TABLE )

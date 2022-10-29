@@ -1,0 +1,7 @@
+
+// ROW#( function name, parameter types, return type )
+//   for no parameters, just use ROW, otherwise ROW1, ROW2, &c
+
+ROW1( string128, string, string128 )
+
+ROW2( string128_operator_get_index, string128, i64, char )

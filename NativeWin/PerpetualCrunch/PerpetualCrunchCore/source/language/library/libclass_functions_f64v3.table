@@ -1,0 +1,10 @@
+
+// ROW#( function name, parameter types, return type )
+//   for no parameters, just use ROW, otherwise ROW1, ROW2, &c
+
+ROW1( dot, f64v3, f64 )
+ROW1( cross, f64v3, f64v3 )
+ROW( normalize, f64v3 )
+ROW( length, f64 )
+ROW( length2, f64 )
+ROW1( consolePrint, string, void )

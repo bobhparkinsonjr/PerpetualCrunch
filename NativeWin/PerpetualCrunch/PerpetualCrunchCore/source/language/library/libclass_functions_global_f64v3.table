@@ -1,0 +1,12 @@
+
+// ROW#( function name, parameter types, return type )
+//   for no parameters, just use ROW, otherwise ROW1, ROW2, &c
+
+ROW3( f64v3, f64, f64, f64, f64v3 )
+
+ROW2( f64v3_operator_add, f64v3, f64v3, f64v3 )
+ROW2( f64v3_operator_subtract, f64v3, f64v3, f64v3 )
+ROW2( f64v3_operator_multiply, f64v3, f64, f64v3 )
+ROW2( f64v3_operator_multiply, f64, f64v3, f64v3 )
+ROW1( f64v3_operator_minus, f64v3, f64v3 )
+ROW2( f64v3_operator_get_index, f64v3, i64, f64 )

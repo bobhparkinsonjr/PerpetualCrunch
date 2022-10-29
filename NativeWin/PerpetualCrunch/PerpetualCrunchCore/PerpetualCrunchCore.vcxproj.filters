@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{9b468fa7-8a54-45b3-89e4-4156051d5106}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\language">
+      <UniqueIdentifier>{36d1e89e-1705-48e6-ac36-4d7a1938e50e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\math">
+      <UniqueIdentifier>{d708b008-3e04-48a7-b2f7-f846966e289a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\language\library">
+      <UniqueIdentifier>{9aa4eb3e-6909-4c64-952d-d13c7e25c6b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\core">
+      <UniqueIdentifier>{f7f0f89d-69cb-4eb8-b20c-71826518a832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\language\syntax tree">
+      <UniqueIdentifier>{9b51f054-d4ac-407d-afed-9f17ecd0b91f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\language\crunch.flex.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch.tab.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_compiler.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_data_stack.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_executable.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_link_table.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_link_table_i1.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_link_table_i2.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_instruction.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_library.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_library_class.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_library_function.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_object.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_string_table.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_symbol_stack.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_thread.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_types.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_value.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\crunch_script_vm.cpp">
+      <Filter>source\language</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_global.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_f64v3.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_f64v4.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\fv3.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\fv4.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="source\math\math_tools.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_binary_buffer.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_debug.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_file_tools.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_mutex.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_qsort.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_text_file.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_thread.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\core\core_wide_string.cpp">
+      <Filter>source\core</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_assignment_statement.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_binary_expression.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_break_statement.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_breakable_statement.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_declaration_statement.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_expression.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_expression_list.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_call.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_declaration.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_parameter.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_function_parameter_list.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_if_statement.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_include.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_literal_type.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_return_statement.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_root.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_statement_list.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_switch_body.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_switch_case.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_type_identifier.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_variable.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\syntax tree\crunch_syntax_node_while_statement.cpp">
+      <Filter>source\language\syntax tree</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_global_debug.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_global_math.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_global_f64v3.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_global_f64v4.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_global_console.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_string128.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+    <ClCompile Include="source\language\library\libclass_functions_global_string128.cpp">
+      <Filter>source\language\library</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="source\language\crunch_script_opcodes.table">
+      <Filter>source\language</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_global.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_f64v3.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_f64v4.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\crunch_libclass_setup_end.mac">
+      <Filter>source\language</Filter>
+    </None>
+    <None Include="source\language\crunch_libclass_setup_start.mac">
+      <Filter>source\language</Filter>
+    </None>
+    <None Include="source\language\crunch_libclass_declare_end.mac">
+      <Filter>source\language</Filter>
+    </None>
+    <None Include="source\language\crunch_libclass_declare_start.mac">
+      <Filter>source\language</Filter>
+    </None>
+    <None Include="source\language\syntax tree\crunch_syntax_nodes.table">
+      <Filter>source\language\syntax tree</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_global_debug.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_global_math.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_global_f64v3.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_global_f64v4.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_global_console.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_string128.table">
+      <Filter>source\language\library</Filter>
+    </None>
+    <None Include="source\language\library\libclass_functions_global_string128.table">
+      <Filter>source\language\library</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\language\crunch.tab.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_compiler.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_data_stack.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_executable.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_link_table.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_link_table_i1.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_link_table_i2.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_instruction.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_library.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_library_class.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_library_function.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_library_tools.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_object.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_string_table.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_symbol_stack.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_thread.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_types.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_value.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_vm.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\library\libclass_functions_global.h">
+      <Filter>source\language\library</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\library\libclass_functions_f64v3.h">
+      <Filter>source\language\library</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\library\libclass_functions_f64v4.h">
+      <Filter>source\language\library</Filter>
+    </ClInclude>
+    <ClInclude Include="source\crunch_global.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\fv3.h">
+      <Filter>source\math</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\fv4.h">
+      <Filter>source\math</Filter>
+    </ClInclude>
+    <ClInclude Include="source\math\math_tools.h">
+      <Filter>source\math</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_binary_buffer.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_debug.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_endian_tools.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_environment_variable.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_file_tools.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_fixed_string.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_global.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_headers.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_mutex.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_platform.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_qsort.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_string.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_text_file.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_thread.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_wide_string.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_file_string.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\core\core_wide_file_string.h">
+      <Filter>source\core</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_assignment_statement.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_binary_expression.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_break_statement.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_breakable_statement.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_declaration_statement.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_expression.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_expression_list.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_call.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_declaration.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_parameter.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_function_parameter_list.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_if_statement.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_include.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_literal_type.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_return_statement.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_root.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_statement_list.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_switch_body.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_switch_case.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_type_identifier.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_variable.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_node_while_statement.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\syntax tree\crunch_syntax_nodes.h">
+      <Filter>source\language\syntax tree</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\library\libclass_functions_string128.h">
+      <Filter>source\language\library</Filter>
+    </ClInclude>
+    <ClInclude Include="source\language\crunch_script_context_stack.h">
+      <Filter>source\language</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Flex Include="source\language\crunch.l">
+      <Filter>source\language</Filter>
+    </Flex>
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="source\language\crunch.y">
+      <Filter>source\language</Filter>
+    </Bison>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+
+// ROW#( function name, parameter types, return type )
+//   for no parameters, just use ROW, otherwise ROW1, ROW2, &c
+
+ROW( length, i64 )
+
+ROW( to_f64, f64 )
+ROW( to_i64, i64 )
+ROW( to_u64, u64 )

@@ -1,0 +1,7 @@
+
+#include "libclass_functions_global_debug.table"
+#include "libclass_functions_global_math.table"
+#include "libclass_functions_global_f64v3.table"
+#include "libclass_functions_global_f64v4.table"
+#include "libclass_functions_global_console.table"
+#include "libclass_functions_global_string128.table"

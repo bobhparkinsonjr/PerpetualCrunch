@@ -1,0 +1,27 @@
+
+// key: ROW( _enum_name, _class_name )
+
+ROW( BASE, Node ) // MUST BE FIRST
+
+ROW( DECLARATION_STATEMENT, DeclarationStatement )
+ROW( EXPRESSION, Expression )
+ROW( FUNCTION_DECLARATION, FunctionDeclaration )
+ROW( FUNCTION_PARAMETER, FunctionParameter )
+ROW( FUNCTION_PARAMETER_LIST, FunctionParameterList )
+ROW( INCLUDE, Include )
+ROW( LITERAL_TYPE, LiteralType )
+ROW( ROOT, Root )
+ROW( STATEMENT_LIST, StatementList )
+ROW( TYPE_IDENTIFIER, TypeIdentifier )
+ROW( FUNCTION_CALL, FunctionCall )
+ROW( EXPRESSION_LIST, ExpressionList )
+ROW( RETURN_STATEMENT, ReturnStatement )
+ROW( VARIABLE, Variable )
+ROW( ASSIGNMENT_STATEMENT, AssignmentStatement )
+ROW( SWITCH_CASE, SwitchCase )
+ROW( SWITCH_BODY, SwitchBody )
+ROW( BINARY_EXPRESSION, BinaryExpression )
+ROW( DEPENDENCY_STATEMENT, DependencyStatement )
+ROW( IF_STATEMENT, IfStatement )
+ROW( BREAK_STATEMENT, BreakStatement )
+ROW( WHILE_STATEMENT, WhileStatement )
