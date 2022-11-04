@@ -282,13 +282,6 @@ void ScriptThread::processing()
         {
           // leaving the root function
 
-          #if defined _CRUNCH_DEBUG
-          {
-            uint64_t offset = mDataStack.getOffset();
-            assert( offset == 0 && "expected clean stack when returning from root function" );
-          }
-          #endif
-
           EXIT_PROCESSING( EXIT_NORMAL );
         }
         else

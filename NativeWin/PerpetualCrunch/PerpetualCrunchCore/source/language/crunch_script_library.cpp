@@ -44,15 +44,15 @@ void ScriptLibrary::setup()
   }
 }
 
-void ScriptLibrary::setup( ScriptCompiler *compiler, std::vector< SyntaxNode* > *trackedNodes )
+void ScriptLibrary::setup( ScriptCompiler *compiler )
 {
-  if ( compiler != nullptr && trackedNodes != nullptr )
+  if ( compiler != nullptr )
   {
     for ( ScriptLibraryClass *c : mLibraryClasses )
-      c->createGlobalSymbols( compiler, trackedNodes );
+      c->createGlobalSymbols( compiler );
 
     if ( mGlobalLibraryClass != nullptr )
-      mGlobalLibraryClass->createGlobalSymbols( compiler, trackedNodes );
+      mGlobalLibraryClass->createGlobalSymbols( compiler );
   }
 }
 

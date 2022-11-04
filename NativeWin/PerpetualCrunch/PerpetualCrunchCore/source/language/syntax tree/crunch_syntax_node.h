@@ -75,6 +75,8 @@ class SyntaxNode
 
     crunch::core::String getChildrenSourceDescription() const;
 
+    core_forceinline SyntaxNode* addReference() { ++mReferenceCount; return this; }
+
   public:
     void reportInternalError( const char *format, ... ) const;
     void reportError( const char *format, ... ) const;
@@ -93,6 +95,8 @@ class SyntaxNode
     ScriptCompiler *mCompiler = nullptr;
     SyntaxNodeRoot *mRoot = nullptr;
     unsigned int mLineNumber = 0;
+
+    int mReferenceCount = 1;
 
   protected:
     static crunch::core::String mIndentStep;

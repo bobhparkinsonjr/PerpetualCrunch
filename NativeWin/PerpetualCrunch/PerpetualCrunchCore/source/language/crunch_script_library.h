@@ -17,8 +17,8 @@ class ScriptLibrary final
     // only needs to be called once, safe to call multiple times
     static void setup();
 
-    // needs to be called once per compiler
-    static void setup( ScriptCompiler *compiler, std::vector< SyntaxNode* > *trackedNodes );
+    // call once per compiler
+    static void setup( ScriptCompiler *compiler );
 
     static void destroy();
 

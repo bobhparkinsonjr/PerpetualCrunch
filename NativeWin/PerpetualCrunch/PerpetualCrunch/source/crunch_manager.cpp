@@ -181,7 +181,7 @@ void CrunchManager::printLibraryDocumentation()
 void CrunchManager::printUsage()
 {
   printf( "\nPerpetual Crunch\n" );
-  printf( "version %d.%d\n", VERSION_MAJOR, VERSION_MINOR );
+  printf( "version %d.%d\n", crunch::language::ScriptCompiler::VERSION_MAJOR, crunch::language::ScriptCompiler::VERSION_MINOR );
   printf( "build date: " __DATE__ "\n" );
 
   printf( "\nusage:\n" );

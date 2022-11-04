@@ -6,10 +6,6 @@ namespace crunch
 
 class CrunchManager final
 {
-  public:
-    enum { VERSION_MAJOR = 1 };
-    enum { VERSION_MINOR = 0 };
-
   private:
     CrunchManager();
     CrunchManager( const CrunchManager& other );

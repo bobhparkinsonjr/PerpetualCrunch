@@ -237,13 +237,18 @@ void SyntaxNode::deleteChildren()
   {
     // corePrint( "deleting %u children ...", (unsigned int)( mChildren.size() ) );
 
-    ChildrenListType::const_iterator it = mChildren.begin();
-    ChildrenListType::const_iterator itEnd = mChildren.end();
+    ChildrenListType::iterator it = mChildren.begin();
+    ChildrenListType::iterator itEnd = mChildren.end();
 
     for ( ; it != itEnd; ++it )
     {
       if ( *it != nullptr )
-        delete *it;
+      {
+        --( ( *it )->mReferenceCount );
+
+        if ( ( *it )->mReferenceCount <= 0 )
+          delete *it;
+      }
     }
 
     mChildren.clear();

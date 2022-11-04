@@ -17,6 +17,8 @@ class ScriptLibraryClass_GlobalLibraryClass : public ScriptLibraryClass
   public:
     virtual bool setup() override;
 
+    virtual void createGlobalSymbols( ScriptCompiler *compiler ) override;
+
 };
 
 #define _class_name GlobalLibraryClass

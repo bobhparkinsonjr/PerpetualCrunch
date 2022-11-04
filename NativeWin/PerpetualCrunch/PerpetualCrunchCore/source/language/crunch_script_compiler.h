@@ -16,12 +16,17 @@ namespace crunch { namespace language {
 class ScriptCompiler final
 {
   public:
+    enum { VERSION_MAJOR = 2 };
+    enum { VERSION_MINOR = 0 };
+
+  public:
     enum class PassType
     {
       PASS_SYMBOL_GENERATION,
       PASS_CODE_GENERATION
     };
 
+  public:
     typedef enum
     {
       FLAG_PRINT_ERRORS = 1 << 0,
@@ -33,7 +38,11 @@ class ScriptCompiler final
       FLAG_ASSEMBLER_FILE = 1 << 4,
       FLAG_SYNTAX_TREE_FILE = 1 << 5,
 
+      #if defined _CRUNCH_DEBUG
+      FLAG_DEFAULT_SETTINGS = FLAG_PRINT_ERRORS | FLAG_PRINT_WARNINGS | FLAG_ASSEMBLER_FILE
+      #else
       FLAG_DEFAULT_SETTINGS = FLAG_PRINT_ERRORS | FLAG_PRINT_WARNINGS
+      #endif
     } FlagType;
 
   public:
@@ -105,6 +114,8 @@ class ScriptCompiler final
     const ScriptObject* findObject( const crunch::core::String& name );
 
     ScriptObject* addObject( const crunch::core::String& name );
+
+    void createGlobalSymbol( const crunch::core::String& name, SyntaxNodeLiteralType *literalNode );
 
   public:
     core_forceinline ScriptContextStack* getContextStack() { return &mContextStack; }
@@ -180,6 +191,8 @@ class ScriptCompiler final
     ScriptContextStack mContextStack;
 
     PassType mPass = PassType::PASS_SYMBOL_GENERATION;
+
+    bool mEnableCreateGlobalSymbol = false;
 
   private:
     #if defined CRUNCH_COMPILER_ENABLE_ASSEMBLER

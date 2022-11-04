@@ -110,6 +110,11 @@ while       { crunch_return_token( TOKEN_RESERVED_WHILE ); }
 "*"   { crunch_return_token( TOKEN_MULTIPLY ); }
 "/"   { crunch_return_token( TOKEN_DIVIDE ); }
 
+"+="  { crunch_return_token( TOKEN_PLUS_EQUALS ); }
+"-="  { crunch_return_token( TOKEN_MINUS_EQUALS ); }
+"*="  { crunch_return_token( TOKEN_MULTIPLY_EQUALS ); }
+"/="  { crunch_return_token( TOKEN_DIVIDE_EQUALS ); }
+
 "("   { crunch_return_token( TOKEN_OPEN_PARAN ); }
 ")"   { crunch_return_token( TOKEN_CLOSE_PARAN ); }
 

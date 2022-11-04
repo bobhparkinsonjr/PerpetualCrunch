@@ -40,7 +40,7 @@ class ScriptLibraryClass
 
     virtual bool setup() { return false; }
 
-    virtual void createGlobalSymbols( ScriptCompiler *compiler, std::vector< SyntaxNode* > *trackedNodes ) {}
+    virtual void createGlobalSymbols( ScriptCompiler *compiler ) {}
 
     virtual crunch::core::String generateMetaInfo() const { return ""; }
 

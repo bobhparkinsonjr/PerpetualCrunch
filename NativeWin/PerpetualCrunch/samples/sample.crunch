@@ -22,7 +22,7 @@ void stringCheck()
     consolePrint( value[i] );
     consolePrint( "\n" );
 
-    i = i + 1;
+    i += 1;
   }
 }
 
@@ -56,8 +56,8 @@ void circleCheck()
 
   f64 r = value.to_f64();
 
-  consolePrint( "\narea: " ); consolePrint( 3.1415927 * r * r ); consolePrint( "\n" );
-  consolePrint( "circumference: " ); consolePrint( 3.1415927 * 2.0 * r ); consolePrint( "\n" );
+  consolePrint( "\narea: " ); consolePrint( PI * r * r ); consolePrint( "\n" );
+  consolePrint( "circumference: " ); consolePrint( PI * 2.0 * r ); consolePrint( "\n" );
 }
 
 void angleCheck()
@@ -80,6 +80,10 @@ void angleCheck()
 
 i64 main()
 {
+  consolePrint( "version info: " ); consolePrint( __VERSION_MAJOR__ ); consolePrint( "." ); consolePrint( __VERSION_MINOR__ ); consolePrint( "\n" );
+  consolePrint( "build date: " ); consolePrint( __BUILD_DATE__ ); consolePrint( "\n" );
+  consolePrint( "build machine: " ); consolePrint( __BUILD_MACHINE__ ); consolePrint( "\n\n" );
+
   stringCheck();
   vectorCheck();
   circleCheck();

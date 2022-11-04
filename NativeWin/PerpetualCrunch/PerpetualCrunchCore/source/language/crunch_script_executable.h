@@ -23,7 +23,7 @@ class ScriptExecutable final
     ScriptExecutable& operator = ( const ScriptExecutable& other );
 
   public:
-    void destroy();
+    void destroy( bool allowDestroyStringTable = true );
 
     core_forceinline ScriptVM* getVM() const { return mVM; }
 

@@ -31,9 +31,10 @@ ScriptExecutable::~ScriptExecutable()
   destroy();
 }
 
-void ScriptExecutable::destroy()
+void ScriptExecutable::destroy( bool allowDestroyStringTable )
 {
-  mStringTable.destroy();
+  if ( allowDestroyStringTable )
+    mStringTable.destroy();
 
   mVM = nullptr;
 

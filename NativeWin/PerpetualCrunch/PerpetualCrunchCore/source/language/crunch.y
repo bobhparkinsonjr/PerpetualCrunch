@@ -40,6 +40,9 @@ unsigned int getParseLineNumber() { return (unsigned int)( crunchlineno ); }
 
 #define _st_params getParseCompiler(), getParseRoot(), getParseLineNumber()
 
+#define _st_op( _op ) crunch::language::SyntaxNodeExpression::Operator::OPERATOR_##_op
+#define _st_bop( _op ) crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_##_op
+
 %}
 
 %union
@@ -98,6 +101,10 @@ unsigned int getParseLineNumber() { return (unsigned int)( crunchlineno ); }
 %token TOKEN_NE
 
 %token TOKEN_ASSIGN
+%token TOKEN_PLUS_EQUALS
+%token TOKEN_MINUS_EQUALS
+%token TOKEN_MULTIPLY_EQUALS
+%token TOKEN_DIVIDE_EQUALS
 
 %token< ival > TOKEN_I64
 %token< uval > TOKEN_U64
@@ -217,6 +224,10 @@ statement : assignment_statement { $$ = $1; }
   ;
 
 assignment_statement : variable TOKEN_ASSIGN expression TOKEN_SEMICOLON { $$ = new crunch::language::SyntaxNodeAssignmentStatement( _st_params, $1, $3 ); }
+  | variable TOKEN_PLUS_EQUALS expression TOKEN_SEMICOLON { $$ = new crunch::language::SyntaxNodeAssignmentStatement( _st_params, $1->addReference(), new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( PLUS ), $3 ) ); }
+  | variable TOKEN_MINUS_EQUALS expression TOKEN_SEMICOLON { $$ = new crunch::language::SyntaxNodeAssignmentStatement( _st_params, $1->addReference(), new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( MINUS ), $3 ) ); }
+  | variable TOKEN_MULTIPLY_EQUALS expression TOKEN_SEMICOLON { $$ = new crunch::language::SyntaxNodeAssignmentStatement( _st_params, $1->addReference(), new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( MULTIPLY ), $3 ) ); }
+  | variable TOKEN_DIVIDE_EQUALS expression TOKEN_SEMICOLON { $$ = new crunch::language::SyntaxNodeAssignmentStatement( _st_params, $1->addReference(), new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( DIVIDE ), $3 ) ); }
   ;
 
 declaration_statement : type_identifier TOKEN_ID TOKEN_ASSIGN expression TOKEN_SEMICOLON { $$ = new crunch::language::SyntaxNodeDeclarationStatement( _st_params, $1, *$2, $4 ); }
@@ -271,23 +282,23 @@ expression_list : { $$ = nullptr; }
   ;
 
 expression : literal_type { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $1 ); }
-  | expression TOKEN_EE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_EE, $3 ); }
-  | expression TOKEN_NE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_NE, $3 ); }
-  | expression TOKEN_GT expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_GT, $3 ); }
-  | expression TOKEN_GE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_GE, $3 ); }
-  | expression TOKEN_LT expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_LT, $3 ); }
-  | expression TOKEN_LE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_LE, $3 ); }
-  | expression TOKEN_PLUS expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_PLUS, $3 ); }
-  | expression TOKEN_MINUS expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_MINUS, $3 ); }
-  | expression TOKEN_MULTIPLY expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_MULTIPLY, $3 ); }
-  | expression TOKEN_DIVIDE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_DIVIDE, $3 ); }
-  | expression TOKEN_BOOL_AND expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_BOOL_AND, $3 ); }
-  | expression TOKEN_BOOL_OR expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_BOOL_OR, $3 ); }
-  | TOKEN_MINUS expression { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $2, crunch::language::SyntaxNodeExpression::Operator::OPERATOR_MINUS ); }
-  | TOKEN_BOOL_NOT expression { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $2, crunch::language::SyntaxNodeExpression::Operator::OPERATOR_BOOL_NOT ); }
-  | expression TOKEN_BIT_AND expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_BIT_AND, $3 ); }
-  | expression TOKEN_BIT_OR expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, crunch::language::SyntaxNodeBinaryExpression::Operator::OPERATOR_BIT_OR, $3 ); }
-  | TOKEN_BIT_COMP expression { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $2, crunch::language::SyntaxNodeExpression::Operator::OPERATOR_BIT_COMP ); }
+  | expression TOKEN_EE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( EE ), $3 ); }
+  | expression TOKEN_NE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( NE ), $3 ); }
+  | expression TOKEN_GT expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( GT ), $3 ); }
+  | expression TOKEN_GE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( GE ), $3 ); }
+  | expression TOKEN_LT expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( LT ), $3 ); }
+  | expression TOKEN_LE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( LE ), $3 ); }
+  | expression TOKEN_PLUS expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( PLUS ), $3 ); }
+  | expression TOKEN_MINUS expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( MINUS ), $3 ); }
+  | expression TOKEN_MULTIPLY expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( MULTIPLY ), $3 ); }
+  | expression TOKEN_DIVIDE expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( DIVIDE ), $3 ); }
+  | expression TOKEN_BOOL_AND expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( BOOL_AND ), $3 ); }
+  | expression TOKEN_BOOL_OR expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( BOOL_OR ), $3 ); }
+  | TOKEN_MINUS expression { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $2, _st_op( MINUS ) ); }
+  | TOKEN_BOOL_NOT expression { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $2, _st_op( BOOL_NOT ) ); }
+  | expression TOKEN_BIT_AND expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( BIT_AND ), $3 ); }
+  | expression TOKEN_BIT_OR expression { $$ = new crunch::language::SyntaxNodeBinaryExpression( _st_params, $1, _st_bop( BIT_OR ), $3 ); }
+  | TOKEN_BIT_COMP expression { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $2, _st_op( BIT_COMP ) ); }
   | TOKEN_OPEN_PARAN expression TOKEN_CLOSE_PARAN { $$ = $2; }
   | function_call { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $1 ); }
   | variable { $$ = new crunch::language::SyntaxNodeExpression( _st_params, $1 ); }

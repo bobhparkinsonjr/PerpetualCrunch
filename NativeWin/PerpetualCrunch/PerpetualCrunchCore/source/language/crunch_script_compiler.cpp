@@ -323,6 +323,18 @@ ScriptObject* ScriptCompiler::addObject( const crunch::core::String& name )
   return mExecutable.addObject( name );
 }
 
+void ScriptCompiler::createGlobalSymbol( const crunch::core::String& name, SyntaxNodeLiteralType *literalNode )
+{
+  if ( !mEnableCreateGlobalSymbol )
+  {
+    reportInternalError( L"", 0, "cannot create global symbols at this time" );
+    return;
+  }
+
+  mTrackedNodes.push_back( literalNode );
+  mSymbolStack->pushConstantSymbol( name, literalNode );
+}
+
 bool ScriptCompiler::findFunctionInfo( SyntaxNode *parentContextNode, 
                                        const crunch::core::String& functionSignature, 
                                        ScriptTypes::ScriptType *objectType, 
@@ -554,16 +566,20 @@ bool ScriptCompiler::build( const crunch::core::WideString& inputSource,
       mSourcePath.setDir( dir );
   }
 
-  ScriptLibrary::setup();
-  ScriptLibrary::setup( this, &mTrackedNodes );
+  if ( mSymbolStack == nullptr )
+    mSymbolStack = new SymbolStack( this );
 
   mContextStack.clear();
   mExecutable.destroy();
 
-  if ( mSymbolStack == nullptr )
-    mSymbolStack = new SymbolStack( this );
-
   setupGlobalSymbols();
+
+  mEnableCreateGlobalSymbol = true;
+
+  ScriptLibrary::setup();
+  ScriptLibrary::setup( this );
+
+  mEnableCreateGlobalSymbol = false;
 
   SyntaxNodeRoot *root = new SyntaxNodeRoot( this );
 
@@ -592,7 +608,7 @@ bool ScriptCompiler::build( const crunch::core::WideString& inputSource,
       tempBuffer.setup( 1024 * 1024 * 16, 1024 * 1024 * 1 );
       root->generateCode( &tempBuffer );
 
-      mExecutable.destroy();
+      mExecutable.destroy( false );
     }
 
     mPass = PassType::PASS_CODE_GENERATION;

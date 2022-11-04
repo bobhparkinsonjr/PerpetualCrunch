@@ -96,23 +96,27 @@ extern int crunchdebug;
     TOKEN_EE = 289,                /* TOKEN_EE  */
     TOKEN_NE = 290,                /* TOKEN_NE  */
     TOKEN_ASSIGN = 291,            /* TOKEN_ASSIGN  */
-    TOKEN_I64 = 292,               /* TOKEN_I64  */
-    TOKEN_U64 = 293,               /* TOKEN_U64  */
-    TOKEN_F64 = 294,               /* TOKEN_F64  */
-    TOKEN_STRING = 295,            /* TOKEN_STRING  */
-    TOKEN_CHAR = 296,              /* TOKEN_CHAR  */
-    TOKEN_TRUE = 297,              /* TOKEN_TRUE  */
-    TOKEN_FALSE = 298,             /* TOKEN_FALSE  */
-    TOKEN_PLUS = 299,              /* TOKEN_PLUS  */
-    TOKEN_MINUS = 300,             /* TOKEN_MINUS  */
-    TOKEN_MULTIPLY = 301,          /* TOKEN_MULTIPLY  */
-    TOKEN_DIVIDE = 302,            /* TOKEN_DIVIDE  */
-    TOKEN_OPEN_PARAN = 303,        /* TOKEN_OPEN_PARAN  */
-    TOKEN_CLOSE_PARAN = 304,       /* TOKEN_CLOSE_PARAN  */
-    TOKEN_OPEN_CURLY = 305,        /* TOKEN_OPEN_CURLY  */
-    TOKEN_CLOSE_CURLY = 306,       /* TOKEN_CLOSE_CURLY  */
-    TOKEN_OPEN_BRACKET = 307,      /* TOKEN_OPEN_BRACKET  */
-    TOKEN_CLOSE_BRACKET = 308      /* TOKEN_CLOSE_BRACKET  */
+    TOKEN_PLUS_EQUALS = 292,       /* TOKEN_PLUS_EQUALS  */
+    TOKEN_MINUS_EQUALS = 293,      /* TOKEN_MINUS_EQUALS  */
+    TOKEN_MULTIPLY_EQUALS = 294,   /* TOKEN_MULTIPLY_EQUALS  */
+    TOKEN_DIVIDE_EQUALS = 295,     /* TOKEN_DIVIDE_EQUALS  */
+    TOKEN_I64 = 296,               /* TOKEN_I64  */
+    TOKEN_U64 = 297,               /* TOKEN_U64  */
+    TOKEN_F64 = 298,               /* TOKEN_F64  */
+    TOKEN_STRING = 299,            /* TOKEN_STRING  */
+    TOKEN_CHAR = 300,              /* TOKEN_CHAR  */
+    TOKEN_TRUE = 301,              /* TOKEN_TRUE  */
+    TOKEN_FALSE = 302,             /* TOKEN_FALSE  */
+    TOKEN_PLUS = 303,              /* TOKEN_PLUS  */
+    TOKEN_MINUS = 304,             /* TOKEN_MINUS  */
+    TOKEN_MULTIPLY = 305,          /* TOKEN_MULTIPLY  */
+    TOKEN_DIVIDE = 306,            /* TOKEN_DIVIDE  */
+    TOKEN_OPEN_PARAN = 307,        /* TOKEN_OPEN_PARAN  */
+    TOKEN_CLOSE_PARAN = 308,       /* TOKEN_CLOSE_PARAN  */
+    TOKEN_OPEN_CURLY = 309,        /* TOKEN_OPEN_CURLY  */
+    TOKEN_CLOSE_CURLY = 310,       /* TOKEN_CLOSE_CURLY  */
+    TOKEN_OPEN_BRACKET = 311,      /* TOKEN_OPEN_BRACKET  */
+    TOKEN_CLOSE_BRACKET = 312      /* TOKEN_CLOSE_BRACKET  */
   };
   typedef enum crunchtokentype crunchtoken_kind_t;
 #endif
@@ -121,7 +125,7 @@ extern int crunchdebug;
 #if ! defined CRUNCHSTYPE && ! defined CRUNCHSTYPE_IS_DECLARED
 union CRUNCHSTYPE
 {
-#line 46 "crunch.y"
+#line 49 "crunch.y"
 
   const crunch::language::crunch_string *text;
   crunch::language::crunch_char cval;
@@ -130,7 +134,7 @@ union CRUNCHSTYPE
   crunch::language::crunch_u64 uval;
   crunch::language::SyntaxNode *node;
 
-#line 134 "crunch.tab.h"
+#line 138 "crunch.tab.h"
 
 };
 typedef union CRUNCHSTYPE CRUNCHSTYPE;

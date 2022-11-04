@@ -14,18 +14,18 @@ namespace crunch { namespace math {
 
 namespace MathTools
 {
-	inline float min_f32( float a, float b )
+	core_forceinline float min_f32( float a, float b )
 	{
 		return ( ( a < b ) ? a : b );
 	}
 
-	inline float max_f32( float a, float b )
+	core_forceinline float max_f32( float a, float b )
 	{
 		return ( ( a > b ) ? a : b );
 	}
 
   // v clamped in the inclusive range [min,max]
-	inline float clamp_f32( float v, float min, float max )
+	core_forceinline float clamp_f32( float v, float min, float max )
 	{
 		if ( v <= min )
 			return min;
@@ -36,7 +36,7 @@ namespace MathTools
 		return v;
 	}
 	
-	inline double clamp_f64( double v, double min, double max )
+	core_forceinline double clamp_f64( double v, double min, double max )
 	{
 		if ( v <= min )
 			return min;
@@ -47,7 +47,7 @@ namespace MathTools
 		return v;
 	}
 
-	inline int clamp_i32( int v, int min, int max )
+	core_forceinline int clamp_i32( int v, int min, int max )
 	{
 		if ( v < min )
 			return min;
